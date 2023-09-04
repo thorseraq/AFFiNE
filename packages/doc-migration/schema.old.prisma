@@ -1,12 +1,12 @@
 generator client {
-    provider      = "prisma-client-js"
-    binaryTargets = ["native"]
-    output        = "./prisma-generated/clientOld"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+  output        = "./prisma-generated/clientOld"
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("DATABASE_OLD_URL")
+  provider = "postgresql"
+  url      = "postgres://xiaotian:XG4kfk8o3Ymi4cas@127.0.0.1:5430/affine"
 }
 
 model google_users {

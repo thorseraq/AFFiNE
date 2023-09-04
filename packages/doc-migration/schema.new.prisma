@@ -1,12 +1,13 @@
 generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = ["native"]
-  output        = "./prisma-generated/clientNew"
+  provider        = "prisma-client-js"
+  binaryTargets   = ["native", "debian-openssl-3.0.x"]
+  previewFeatures = ["metrics", "tracing"]
+  output          = "./prisma-generated/clientNew"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgres://affine-cloud:GZPcRhzbtzVM0@127.0.0.1:5431/affine-cloud"
 }
 
 model Workspace {
@@ -139,4 +140,13 @@ model Update {
 
   @@index([id, workspaceId])
   @@map("updates")
+}
+
+model NewFeaturesWaitingList {
+  id        String   @id @default(uuid()) @db.VarChar
+  email     String   @unique
+  type      Int      @db.SmallInt
+  createdAt DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@map("new_features_waiting_list")
 }

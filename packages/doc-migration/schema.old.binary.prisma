@@ -6,7 +6,7 @@ generator client {
 
 datasource db {
     provider = "postgresql"
-    url      = env("DATABASE_OLD_BINARY_URL")
+    url      = "postgres://xiaotian:XG4kfk8o3Ymi4cas@127.0.0.1:5430/affine_binary"
 }
 
 model blobs {
