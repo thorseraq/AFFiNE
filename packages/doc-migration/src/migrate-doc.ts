@@ -32,7 +32,12 @@ for (let i = 0; i < workspaceIds.length; i++) {
       await prismaOldService.getYDoc(workspaceId);
     const migratedDoc = upgradeYDoc(doc);
     migratedDoc.guid = workspaceId;
-    await saveMigratedDocToSnapshot(workspaceId, migratedDoc, createdAt, updatedAt);
+    await saveMigratedDocToSnapshot(
+      workspaceId,
+      migratedDoc,
+      createdAt,
+      updatedAt
+    );
   } catch (e) {
     console.error(`workspaceId: ${workspaceId} update and save failed`, e);
   }
