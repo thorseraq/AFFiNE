@@ -7,7 +7,8 @@
     "generate": "prisma generate --schema schema.new.prisma && prisma generate --schema schema.old.prisma && prisma generate --schema schema.old.binary.prisma",
     "generate-new": "prisma generate --schema schema.new.prisma",
     "generate-old": "prisma generate --schema schema.old.prisma",
-    "generate-old-binary": "prisma generate --schema schema.old.binary.prisma"
+    "generate-old-binary": "prisma generate --schema schema.old.binary.prisma",
+    "generate-local": "prisma generate --schema schema.local.prisma"
   },
   "dependencies": {
     "@affine/env": "workspace:*",
